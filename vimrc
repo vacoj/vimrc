@@ -9,6 +9,7 @@ filetype plugin indent on
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_theme="serene"
 let g:deepspace_italics=1
+set clipboard=unnamed
 let g:lucario_italic=1
 let g:lucario_bold=1
 set background=dark
