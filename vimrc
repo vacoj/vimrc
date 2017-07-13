@@ -20,7 +20,7 @@ colorscheme onedark
 set clipboard=unnamed
 let g:go_fmt_command = "goimports"
 au FileType go nmap <Ctrl-F5> :GoCoverageToggle -short<cr
-au FileType go nmap <Ctrl-F14> <Plug>(go-def)
+au FileType go nmap <Ctrl-F4> <Plug>(go-def)
 au FileType go nmap <leader>gt :GoDeclsDir<cr>
 let g:go_auto_type_info = 1
 let g:go_highlight_build_constraints = 1
