@@ -9,7 +9,6 @@ filetype plugin indent on
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_theme="serene"
 let g:deepspace_italics=1
-set clipboard=unnamed
 let g:lucario_italic=1
 let g:lucario_bold=1
 set background=dark
@@ -17,9 +16,11 @@ autocmd FileType ruby,eruby set filetype=ruby.eruby.chef
 set t_Co=256
 set termguicolors
 set guifont=Operator\ Mono\ Book:h12 
-colorscheme PaperColor
-au FileType go nmap <leader>gt :GoDeclsDir<cr>
+colorscheme onedark
+set clipboard=unnamed
+let g:go_fmt_command = "goimports"
 au FileType go nmap <Ctrl-F5> :GoCoverageToggle -short<cr>
+au FileType go nmap <leader>gt :GoDeclsDir<cr>
 let g:go_auto_type_info = 1
 let g:go_highlight_build_constraints = 1
 let g:go_highlight_extra_types = 1
@@ -34,7 +35,11 @@ au FileType go set noexpandtab
 au FileType go set shiftwidth=4
 au FileType go set softtabstop=4
 au FileType go set tabstop=4
-
+" Error and warning signs.
+let g:ale_sign_error = '⤫'
+let g:ale_sign_warning = '⚠'
+" Enable integration with airline.
+let g:airline#extensions#ale#enabled = 1
 au VimEnter * NERDTreeToggle
 nmap <F3> :NERDTreeToggle<CR>
 nmap <F8> :TagbarToggle<CR>
