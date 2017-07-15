@@ -1,3 +1,21 @@
+"Credit joshdick
+"Use 24-bit (true-color) mode in Vim/Neovim when outside tmux.
+"If you're using tmux version 2.2 or later, you can remove the outermost $TMUX check and use tmux's 24-bit color support
+"(see < http://sunaku.github.io/tmux-24bit-color.html#usage > for more information.)
+if (empty($TMUX))
+  if (has("nvim"))
+  "For Neovim 0.1.3 and 0.1.4 < https://github.com/neovim/neovim/pull/2198 >
+  let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+  endif
+  "For Neovim > 0.1.5 and Vim > patch 7.4.1799 < https://github.com/vim/vim/commit/61be73bb0f965a895bfb064ea3e55476ac175162 >
+  "Based on Vim patch 7.4.1770 (`guicolors` option) < https://github.com/vim/vim/commit/8a633e3427b47286869aa4b96f2bfc1fe65b25cd >
+  " < https://github.com/neovim/neovim/wiki/Following-HEAD#20160511 >
+  if (has("termguicolors"))
+    set termguicolors
+  endif
+endif
+let g:neodark#solid_vertsplit = 1 " default: 0
+let g:neodark#background = '#202020'
 filetype off
 execute pathogen#infect()
 syntax on
@@ -7,7 +25,7 @@ set number
 set linespace=5
 filetype plugin indent on
 let g:airline#extensions#tabline#enabled = 1
-let g:airline_theme="serene"
+let g:airline_theme="neodark"
 let g:deepspace_italics=1
 let g:lucario_italic=1
 let g:lucario_bold=1
@@ -16,11 +34,13 @@ autocmd FileType ruby,eruby set filetype=ruby.eruby.chef
 set t_Co=256
 set termguicolors
 set guifont=Operator\ Mono\ Book:h12 
-colorscheme onedark
+colorscheme neodark
+let g:one_allow_italics=1
+set background=dark " for the dark version
+" set background=light " for the light _VERSION
 set clipboard=unnamed
 let g:go_fmt_command = "goimports"
-au FileType go nmap <Ctrl-F5> :GoCoverageToggle -short<cr
-au FileType go nmap <Ctrl-F4> <Plug>(go-def)
+au FileType go nmap <Ctrl-F5> :GoCoverageToggle -short<cr>
 au FileType go nmap <leader>gt :GoDeclsDir<cr>
 let g:go_auto_type_info = 1
 let g:go_highlight_build_constraints = 1
