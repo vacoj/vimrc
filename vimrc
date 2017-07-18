@@ -16,7 +16,8 @@ if (empty($TMUX))
 endif
 let g:neodark#solid_vertsplit = 1 " default: 0
 let g:neodark#background = '#202020'
-filetype off
+"filetype off
+filetype plugin on
 execute pathogen#infect()
 syntax on
 set mouse=a
@@ -25,21 +26,21 @@ set number
 set linespace=5
 filetype plugin indent on
 let g:airline#extensions#tabline#enabled = 1
-let g:airline_theme="neodark"
+let g:airline_theme="onedark"
 let g:deepspace_italics=1
 let g:lucario_italic=1
 let g:lucario_bold=1
 set background=dark
 autocmd FileType ruby,eruby set filetype=ruby.eruby.chef
-set t_Co=256
+"set t_Co=256
 set termguicolors
-set guifont=Operator\ Mono\ Book:h12 
-colorscheme neodark
+set guifont=Operator\ Mono\ Book:h12
+colorscheme onedark
 let g:one_allow_italics=1
-set background=dark " for the dark version
+set background=dark " puffy puffy puffy for the dark version
 " set background=light " for the light _VERSION
 set clipboard=unnamed
-let g:go_fmt_command = "goimports"
+"let g:go_fmt_command = "goimports"
 au FileType go nmap <Ctrl-F5> :GoCoverageToggle -short<cr>
 au FileType go nmap <leader>gt :GoDeclsDir<cr>
 let g:go_auto_type_info = 1
@@ -162,7 +163,7 @@ let g:nerdtree_tabs_open_on_console_startup = 1
 let g:nerdtree_tabs_no_startup_for_diff = 1
 let g:nerdtree_tabs_smart_startup_focus = 1
 let g:nerdtree_tabs_open_on_new_tab = 1
-let g:nerdtree_tabs_synchronize_focus = 1 
+let g:nerdtree_tabs_synchronize_focus = 1
 let g:nerdtree_tabs_autoclose = 1
 let g:nerdtree_tabs_autofind = 1
 
@@ -202,3 +203,5 @@ let g:airline_powerline_fonts = 1
 if !exists('g:airline_symbols')
     let g:airline_symbols = {}
 endif
+
+
