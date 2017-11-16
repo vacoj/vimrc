@@ -1,4 +1,23 @@
-filetype off
+"Credit joshdick
+"Use 24-bit (true-color) mode in Vim/Neovim when outside tmux.
+"If you're using tmux version 2.2 or later, you can remove the outermost $TMUX check and use tmux's 24-bit color support
+"(see < http://sunaku.github.io/tmux-24bit-color.html#usage > for more information.)
+if (empty($TMUX))
+  if (has("nvim"))
+  "For Neovim 0.1.3 and 0.1.4 < https://github.com/neovim/neovim/pull/2198 >
+  let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+  endif
+  "For Neovim > 0.1.5 and Vim > patch 7.4.1799 < https://github.com/vim/vim/commit/61be73bb0f965a895bfb064ea3e55476ac175162 >
+  "Based on Vim patch 7.4.1770 (`guicolors` option) < https://github.com/vim/vim/commit/8a633e3427b47286869aa4b96f2bfc1fe65b25cd >
+  " < https://github.com/neovim/neovim/wiki/Following-HEAD#20160511 >
+  if (has("termguicolors"))
+    set termguicolors
+  endif
+endif
+let g:neodark#solid_vertsplit = 1 " default: 0
+let g:neodark#background = '#202020'
+"filetype off
+filetype plugin on
 execute pathogen#infect()
 syntax on
 set mouse=a
@@ -7,18 +26,24 @@ set number
 set linespace=5
 filetype plugin indent on
 let g:airline#extensions#tabline#enabled = 1
-let g:airline_theme="serene"
+let g:airline_theme="onedark"
 let g:deepspace_italics=1
 let g:lucario_italic=1
 let g:lucario_bold=1
 set background=dark
 autocmd FileType ruby,eruby set filetype=ruby.eruby.chef
-set t_Co=256
+"set t_Co=256
 set termguicolors
-set guifont=Operator\ Mono\ Book:h12 
-colorscheme PaperColor
+set guifont=Operator\ Mono\ Book:h12
+colorscheme onedark
+let g:one_allow_italics=1
+set background=dark " puffy puffy puffy for the dark version
+" set background=light " for the light _VERSION
+set clipboard=unnamed
+"let g:go_fmt_command = "goimports"
+au FileType go nmap <Ctrl-F5> :GoCoverageToggle -short<cr>
 au FileType go nmap <leader>gt :GoDeclsDir<cr>
-
+let g:go_auto_type_info = 1
 let g:go_highlight_build_constraints = 1
 let g:go_highlight_extra_types = 1
 let g:go_highlight_fields = 1
@@ -32,7 +57,11 @@ au FileType go set noexpandtab
 au FileType go set shiftwidth=4
 au FileType go set softtabstop=4
 au FileType go set tabstop=4
-
+" Error and warning signs.
+let g:ale_sign_error = '⤫'
+let g:ale_sign_warning = '⚠'
+" Enable integration with airline.
+let g:airline#extensions#ale#enabled = 1
 au VimEnter * NERDTreeToggle
 nmap <F3> :NERDTreeToggle<CR>
 nmap <F8> :TagbarToggle<CR>
@@ -40,7 +69,9 @@ highlight Comment cterm=italic
 au BufRead,BufNewFile *.md set filetype=markdown
 au Filetype go set makeprg=go\ build\ ./...
 nmap <F5> :make<CR>:copen<CR>
-au BufWritePost * silent! !ctags -R &
+" au BufWritePost * silent! !ctags -R &
+
+au BufWritePost * silent !ctags -a -Rf .ctags --languages=javascript,typescript,python,golang,c,java,ruby,csharp --exclude=.git --exclude="*.min.js" --exclude=node_modules --exclude="/home/joe" --exclude="/Users/joe" --exclude="/Users/jvacovsk" --exclude=".*" --exclude="bower_components" 2>/dev/null
 
 function! s:GoVet()
     cexpr system("go vet " . shellescape(expand('%')))
@@ -134,7 +165,7 @@ let g:nerdtree_tabs_open_on_console_startup = 1
 let g:nerdtree_tabs_no_startup_for_diff = 1
 let g:nerdtree_tabs_smart_startup_focus = 1
 let g:nerdtree_tabs_open_on_new_tab = 1
-let g:nerdtree_tabs_synchronize_focus = 1 
+let g:nerdtree_tabs_synchronize_focus = 1
 let g:nerdtree_tabs_autoclose = 1
 let g:nerdtree_tabs_autofind = 1
 
@@ -175,25 +206,4 @@ if !exists('g:airline_symbols')
     let g:airline_symbols = {}
 endif
 
-" unicode symbols
-let g:airline_left_sep = '»'
-let g:airline_left_sep = '▶'
-let g:airline_right_sep = '«'
-let g:airline_right_sep = '◀'
-let g:airline_symbols.linenr = '␊'
-let g:airline_symbols.linenr = '␤'
-let g:airline_symbols.linenr = '¶'
-let g:airline_symbols.branch = '⎇'
-let g:airline_symbols.paste = 'ρ'
-let g:airline_symbols.paste = 'Þ'
-let g:airline_symbols.paste = '∥'
-let g:airline_symbols.whitespace = 'Ξ'
 
-" airline symbols
-let g:airline_left_sep = ''
-let g:airline_left_alt_sep = ''
-let g:airline_right_sep = ''
-let g:airline_right_alt_sep = ''
-let g:airline_symbols.branch = ''
-let g:airline_symbols.readonly = ''
-let g:airline_symbols.linenr = ''
