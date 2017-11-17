@@ -99,7 +99,7 @@ echo "RUN: pip install neovim"
 echo "ALSO, if you have installed neovim, then run these commands:"
 echo "mkdir ~/.config/nvim"
 echo "ln ~/.vim/bundle ~/.config/nvim/bundle"
-echo "ln ~/.vim/autocomplete ~/.config/nvim/autocomplete"
+echo "ln ~/.vim/autoload ~/.config/nvim/autoload"
 echo "ln ~/.vimrc ~/.config/nvim/init.vim"
 
 
