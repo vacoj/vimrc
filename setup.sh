@@ -1,6 +1,8 @@
 #!/bin/bash
 
 
+
+
 # GoLang related 
 git clone https://github.com/fatih/vim-go.git ~/.vim/bundle/vim-go
 git clone https://github.com/tomtom/tlib_vim.git ~/.vim/bundle/tlib_vim
@@ -91,3 +93,5 @@ git clone https://github.com/moll/vim-node.git ~/.vim/bundle/vim-node
 # This is broken for me as of 3/28/17
 #git clone https://github.com/Townk/vim-autoclose.git ~/.vim/bundle/vim-autoclose
 
+echo "DON'T FORGET TO INSTALL THE NEOVIM PLUGIN WITH PIP"
+echo "RUN: pip install neovim"
