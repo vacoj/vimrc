@@ -143,6 +143,10 @@ if has('unix')
   let g:airline_symbols.linenr = ''
 endif
 
+
+au BufWritePost * silent !ctags -a -Rf .ctags --languages=javascript,typescript,python,golang,c,java,ruby,csharp --exclude=.git --exclude="*.min.js" --exclude=node_modules --exclude="/home/joe" --exclude="/Users/joe" --exclude="/Users/jvacovsk" --exclude=".*" --exclude="bower_components" 2>/dev/null
+
+
 fun! s:MyNERDTreeSetting()
   fun! s:DoubleClickBehavior()
     if match(getline("."), "▸") == -1 && match(getline("."), "▾") == -1
