@@ -27,7 +27,9 @@ git clone https://github.com/jistr/vim-nerdtree-tabs.git ~/.vim/bundle/vim-nerdt
 git clone https://github.com/mattn/emmet-vim.git ~/.vim/bundle/emmet-vim.git
 
 # Other 
-git clone https://github.com/vim-syntastic/syntastic.git ~/.vim/bundle/syntastic
+git clone https://github.com/w0rp/ale.git ~/.vim/bundle/ale
+
+# git clone https://github.com/vim-syntastic/syntastic.git ~/.vim/bundle/syntastic
 git clone https://github.com/xolox/vim-misc.git ~/.vim/bundle/vim-misc
 git clone https://github.com/tpope/vim-sensible.git ~/.vim/bundle/vim-sensible
 git clone https://github.com/scrooloose/nerdcommenter ~/.vim/bundle/nerdcommenter
@@ -44,7 +46,6 @@ git clone https://github.com/vim-airline/vim-airline.git ~/.vim/bundle/airline
 git clone https://github.com/craigemery/vim-autotag.git ~/.vim/bundle/vim-autotag
 git clone https://github.com/majutsushi/tagbar ~/.vim/bundle/tagbar
 git clone https://github.com/xolox/vim-easytags.git ~/.vim/bundle/vim-easytags
-git clone https://github.com/w0rp/ale.git ~/.vim/bundle/ale
 
 
 # git related
