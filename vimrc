@@ -17,12 +17,12 @@ endif
 
 let g:ale_fix_on_save = 1
 let g:ale_fixers = {
-\   'javascript': ['eslint'],
-\	'chef':	['foodcritic'],
+\   'javascript': ['prettier', 'jshint'],
+\	  'chef':	['foodcritic'],
 \ 	'go':	['gofmt', 'goimports'],
-\	'python': ['autopep8'],
-\	'ansible': ['ansible-lint'],
-\	'ruby': ['rubocop']
+\	  'python': ['autopep8'],
+\	  'ansible': ['ansible-lint'],
+\	  'ruby': ['rubocop']
 \}
 
 let g:neodark#solid_vertsplit = 1 " default: 0
