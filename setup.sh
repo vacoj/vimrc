@@ -10,6 +10,7 @@ git clone https://github.com/MarcWeber/vim-addon-mw-utils.git ~/.vim/bundle/vim-
 git clone https://github.com/garyburd/go-explorer.git ~/.vim/bundle/go-explorer
 git clone https://github.com/dgryski/vim-godef.git ~/.vim/bundle/vim-godef
 git clone https://github.com/zanglg/nova.vim.git ~/.vim/bundle/vim-nova
+
 # C Sharp related
 
 # Chef/Ruby related
@@ -43,6 +44,7 @@ git clone https://github.com/vim-airline/vim-airline.git ~/.vim/bundle/airline
 git clone https://github.com/craigemery/vim-autotag.git ~/.vim/bundle/vim-autotag
 git clone https://github.com/majutsushi/tagbar ~/.vim/bundle/tagbar
 git clone https://github.com/xolox/vim-easytags.git ~/.vim/bundle/vim-easytags
+git clone https://github.com/w0rp/ale.git ~/.vim/bundle/ale
 
 
 # git related
