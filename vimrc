@@ -14,6 +14,16 @@ if (empty($TMUX))
     set termguicolors
   endif
 endif
+
+let g:ale_fix_on_save = 1
+let g:ale_fixers = {
+\   'javascript': ['eslint'],
+\	'chef':	['foodcritic'],
+\ 	'go':	['gofmt', 'goimports'],
+\	'python': ['autopep8']
+\	'ansible': ['ansible-lint']
+\}
+
 let g:neodark#solid_vertsplit = 1 " default: 0
 let g:neodark#background = '#202020'
 "filetype off
