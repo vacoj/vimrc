@@ -36,7 +36,7 @@ autocmd FileType ruby,eruby set filetype=ruby.eruby.chef
 set termguicolors
 set guifont=Operator\ Mono\ Book:h12
 let g:ale_sign_column_always = 1
-colorscheme onedark
+colorscheme vimspectr240curve-dark
 let g:one_allow_italics=1
 set background=dark " puffy puffy puffy for the dark version
 " set background=light " for the light _VERSION
