@@ -35,6 +35,7 @@ autocmd FileType ruby,eruby set filetype=ruby.eruby.chef
 "set t_Co=256
 set termguicolors
 set guifont=Operator\ Mono\ Book:h12
+let g:ale_sign_column_always = 1
 colorscheme onedark
 let g:one_allow_italics=1
 set background=dark " puffy puffy puffy for the dark version
