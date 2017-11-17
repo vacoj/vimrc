@@ -68,13 +68,14 @@ git clone https://github.com/AlexMax/.vim.git ~/.vim/bundle/alexmaxvim
 git clone https://github.com/rakr/vim-two-firewatch.git ~/.vim/bundle/vim-two-firewatch
 git clone https://github.com/davidhalter/jedi-vim.git ~/.vim/bundle/jedi
 git clone https://github.com/jodosha/vim-godebug.git ~/.vim/bundle/vim-godebug
+git clone https://github.com/nightsense/vimspectr.git ~/.vim/bundle/vimspectr
 
 
 # autocomplete
 git clone https://github.com/Valloric/YouCompleteMe.git ~/.vim/bundle/YouCompleteMe
 cd ~/.vim/bundle/YouCompleteMe
 git submodule update --init --recursive
-./install.sh
+./install.sh --clang-completer --go-completer --js-completer --cs-completer
 cd ~
 git clone https://github.com/ervandew/supertab ~/.vim/bundle/supertab
 git clone https://github.com/garbas/vim-snipmate.git ~/.vim/bundle/vim-snipmate
@@ -84,6 +85,9 @@ git clone https://github.com/jiangmiao/auto-pairs.git ~/.vim/bundle/auto-pairs
 git clone https://github.com/OmniSharp/omnisharp-vim.git ~/.vim/bundle/omnisharp-vim
 git clone https://github.com/SirVer/ultisnips.git ~/.vim/bundle/ultisnips
 git clone https://github.com/sheerun/vim-polyglot.git ~/.vim/bundle/vim-polyglot
+git clone https://github.com/moll/vim-node.git ~/.vim/bundle/vim-node
+
+
 # This is broken for me as of 3/28/17
 #git clone https://github.com/Townk/vim-autoclose.git ~/.vim/bundle/vim-autoclose
 
