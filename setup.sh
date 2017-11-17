@@ -95,3 +95,11 @@ git clone https://github.com/moll/vim-node.git ~/.vim/bundle/vim-node
 
 echo "DON'T FORGET TO INSTALL THE NEOVIM PLUGIN WITH PIP"
 echo "RUN: pip install neovim"
+
+echo "ALSO, if you have installed neovim, then run these commands:"
+echo "mkdir ~/.config/nvim"
+echo "ln ~/.vim/bundle ~/.config/nvim/bundle"
+echo "ln ~/.vim/autocomplete ~/.config/nvim/autocomplete"
+echo "ln ~/.vimrc ~/.config/nvim/init.vim"
+
+
