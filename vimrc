@@ -24,7 +24,6 @@ let g:ale_fixers = {
 \	  'ansible': ['ansible-lint'],
 \	  'ruby': ['rubocop']
 \}
-highlight ALEError gui=bold guifg=#ff0000
 let g:neodark#solid_vertsplit = 1 " default: 0
 let g:neodark#background = '#202020'
 "filetype off
@@ -79,6 +78,9 @@ nmap <F3> :NERDTreeToggle<CR>
 nmap <F8> :TagbarToggle<CR>
 highlight Comment cterm=italic
 highlight Comment gui=italic
+highlight ALEErrorLine gui=bold guifg=#ff00ff
+highlight ALEError gui=italic guifg=#ff0000
+
 au BufRead,BufNewFile *.md set filetype=markdown
 au Filetype go set makeprg=go\ build\ ./...
 nmap <F5> :make<CR>:copen<CR>
