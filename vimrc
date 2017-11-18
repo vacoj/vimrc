@@ -78,8 +78,8 @@ nmap <F3> :NERDTreeToggle<CR>
 nmap <F8> :TagbarToggle<CR>
 highlight Comment cterm=italic
 highlight Comment gui=italic
-highlight ALEErrorLine gui=bold guifg=#993333
-highlight ALEError gui=italic guifg=#ff0000
+highlight ALEErrorLine gui=italic guifg=#993333
+highlight ALEError gui=bold guifg=#ff0000
 
 au BufRead,BufNewFile *.md set filetype=markdown
 au Filetype go set makeprg=go\ build\ ./...
