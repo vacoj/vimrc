@@ -195,8 +195,8 @@ autocmd FileType * nested :call tagbar#autoopen(0)
 let &t_ZH="\e[3m"
 let &t_ZR="\e[23m"
 highlight Comment cterm=italic
-set completeopt-=preview
-"let g:ycm_add_preview_to_completeopt = 1
+set completeopt=preview
+let g:ycm_add_preview_to_completeopt = 1
 
 autocmd FileType c,cpp,cs,js,go,py nested :TagbarOpen
 
