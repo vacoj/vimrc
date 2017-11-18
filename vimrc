@@ -78,7 +78,7 @@ nmap <F3> :NERDTreeToggle<CR>
 nmap <F8> :TagbarToggle<CR>
 highlight Comment cterm=italic
 highlight Comment gui=italic
-highlight ALEErrorLine gui=bold guifg=#ff00ff
+highlight ALEErrorLine gui=bold guifg=#993333
 highlight ALEError gui=italic guifg=#ff0000
 
 au BufRead,BufNewFile *.md set filetype=markdown
