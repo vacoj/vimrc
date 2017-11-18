@@ -78,6 +78,7 @@ au VimEnter * NERDTreeToggle
 nmap <F3> :NERDTreeToggle<CR>
 nmap <F8> :TagbarToggle<CR>
 highlight Comment cterm=italic
+highlight Comment gui=italic
 au BufRead,BufNewFile *.md set filetype=markdown
 au Filetype go set makeprg=go\ build\ ./...
 nmap <F5> :make<CR>:copen<CR>
