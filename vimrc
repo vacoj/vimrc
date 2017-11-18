@@ -15,6 +15,10 @@ if (empty($TMUX))
   endif
 endif
 
+"filetype off
+filetype plugin on
+execute pathogen#infect()
+
 let g:ale_fix_on_save = 1
 let g:ale_fixers = {
 \   'javascript': ['prettier', 'jshint'],
@@ -26,9 +30,7 @@ let g:ale_fixers = {
 \}
 let g:neodark#solid_vertsplit = 1 " default: 0
 let g:neodark#background = '#202020'
-"filetype off
-filetype plugin on
-execute pathogen#infect()
+
 syntax on
 set mouse=a
 set tabstop=4
