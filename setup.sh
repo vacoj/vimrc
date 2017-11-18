@@ -91,7 +91,7 @@ git clone https://github.com/OmniSharp/omnisharp-vim.git ~/.vim/bundle/omnisharp
 git clone https://github.com/SirVer/ultisnips.git ~/.vim/bundle/ultisnips
 git clone https://github.com/sheerun/vim-polyglot.git ~/.vim/bundle/vim-polyglot
 git clone https://github.com/moll/vim-node.git ~/.vim/bundle/vim-node
-
+git clone https://github.com/posva/vim-vue.git ~/.vim/bundle/vim-vuew
 
 # This is broken for me as of 3/28/17
 #git clone https://github.com/Townk/vim-autoclose.git ~/.vim/bundle/vim-autoclose
@@ -105,4 +105,6 @@ echo "ln ~/.vim/bundle ~/.config/nvim/bundle"
 echo "ln ~/.vim/autoload ~/.config/nvim/autoload"
 echo "ln ~/.vimrc ~/.config/nvim/init.vim"
 
-
+sudo gem install rubocop foodcritic
+sudo npm install -g prettier jshint eslint eslint-plugin-vue htmlhint write-good tidy
+sudo pip install autopep8 pylint ansible-lint
