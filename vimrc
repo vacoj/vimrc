@@ -31,6 +31,11 @@ let g:ale_fixers = {
 let g:neodark#solid_vertsplit = 1 " default: 0
 let g:neodark#background = '#202020'
 
+
+let g:ale_linters = {
+						\'go': ['gometalinter', 'golint', 'gosimple']
+						\}
+let g:airline_theme='materialmonokai'
 syntax on
 set mouse=a
 set tabstop=4
@@ -38,7 +43,7 @@ set number
 set linespace=5
 filetype plugin indent on
 let g:airline#extensions#tabline#enabled = 1
-let g:airline_theme="onedark"
+" let g:airline_theme="onedark"
 let g:deepspace_italics=1
 let g:lucario_italic=1
 let g:lucario_bold=1
@@ -48,7 +53,10 @@ autocmd FileType ruby,eruby set filetype=ruby.eruby.chef
 set termguicolors
 set guifont=Operator\ Mono\ Book:h12
 let g:ale_sign_column_always = 1
-colorscheme vimspectr240curve-dark
+
+colorscheme material-monokai "vimspectr240curve-dark  nemo-dark  materialbox  onedark
+
+" colorscheme vimspectr240curve-dark
 let g:one_allow_italics=1
 set background=dark " puffy puffy puffy for the dark version
 " set background=light " for the light _VERSION
