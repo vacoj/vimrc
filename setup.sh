@@ -74,7 +74,7 @@ git clone https://github.com/rakr/vim-two-firewatch.git ~/.vim/bundle/vim-two-fi
 git clone https://github.com/davidhalter/jedi-vim.git ~/.vim/bundle/jedi
 git clone https://github.com/jodosha/vim-godebug.git ~/.vim/bundle/vim-godebug
 git clone https://github.com/nightsense/vimspectr.git ~/.vim/bundle/vimspectr
-
+git clone https://github.com/skielbasa/vim-material-monokai.git ~/.vim/bundle/material-monokai
 
 # autocomplete
 git clone https://github.com/Valloric/YouCompleteMe.git ~/.vim/bundle/YouCompleteMe
