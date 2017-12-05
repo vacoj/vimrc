@@ -35,7 +35,7 @@ let g:neodark#background = '#202020'
 let g:ale_linters = {
 						\'go': ['gometalinter', 'golint', 'gosimple']
 						\}
-let g:airline_theme='materialmonokai'
+
 syntax on
 set mouse=a
 set tabstop=4
@@ -54,7 +54,10 @@ set termguicolors
 set guifont=Operator\ Mono\ Book:h12
 let g:ale_sign_column_always = 1
 
+let g:airline_theme='materialmonokai'
+let g:materialmonokai_italic=1
 colorscheme material-monokai "vimspectr240curve-dark  nemo-dark  materialbox  onedark
+
 
 " colorscheme vimspectr240curve-dark
 let g:one_allow_italics=1
