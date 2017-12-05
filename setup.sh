@@ -108,3 +108,6 @@ echo "ln ~/.vimrc ~/.config/nvim/init.vim"
 sudo gem install rubocop foodcritic
 sudo npm install -g prettier jshint eslint eslint-plugin-vue htmlhint write-good tidy
 sudo pip install autopep8 pylint ansible-lint
+
+go get honnef.co/go/tools/cmd/staticcheck
+go get honnef.co/go/tools/cmd/gosimple
