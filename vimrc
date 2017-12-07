@@ -61,7 +61,7 @@ colorscheme material-monokai "vimspectr240curve-dark  nemo-dark  materialbox  on
 
 " colorscheme vimspectr240curve-dark
 let g:one_allow_italics=1
-set background=dark " puffy puffy puffy for the dark version
+" set background=dark " puffy puffy puffy for the dark version
 " set background=light " for the light _VERSION
 set clipboard=unnamed
 "let g:go_fmt_command = "goimports"
