@@ -31,10 +31,10 @@ let g:ale_fixers = {
 let g:neodark#solid_vertsplit = 1 " default: 0
 let g:neodark#background = '#202020'
 
-
-let g:ale_linters = {
-						\'go': ['gometalinter', 'golint', 'gosimple']
-						\}
+filetype indent on
+set smartindent
+set cursorline
+set cursorcolumn
 
 syntax on
 set mouse=a
