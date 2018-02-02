@@ -2,6 +2,6 @@
 
 for d in */ ; do
     cd "$d"
-    git pull
+    git pull &
     cd ../
 done
