@@ -1,7 +1,35 @@
-"Credit joshdick
-"Use 24-bit (true-color) mode in Vim/Neovim when outside tmux.
-"If you're using tmux version 2.2 or later, you can remove the outermost $TMUX check and use tmux's 24-bit color support
-"(see < http://sunaku.github.io/tmux-24bit-color.html#usage > for more information.)
+set nocompatible
+set nowrap        " don't wrap lines
+set tabstop=4     " a tab is four spaces
+set backspace=indent,eol,start
+                    " allow backspacing over everything in insert mode
+set autoindent    " always set autoindenting on
+set copyindent    " copy the previous indentation on autoindenting
+set number        " always show line numbers
+set shiftwidth=4  " number of spaces to use for autoindenting
+set shiftround    " use multiple of shiftwidth when indenting with '<' and '>'
+set showmatch     " set show matching parenthesis
+set ignorecase    " ignore case when searching
+set smartcase     " ignore case if search pattern is all lowercase,
+                    "    case-sensitive otherwise
+set smarttab      " insert tabs on the start of a line according to
+                    "    shiftwidth, not tabstop
+set hlsearch      " highlight search terms
+set incsearch     " show search matches as you type
+set history=1000         " remember more commands and search history
+set undolevels=1000      " use many muchos levels of undo
+set wildignore=*.swp,*.bak,*.pyc,*.class
+set title                " change the terminal's title
+set visualbell           " don't beep
+set noerrorbells         " don't beep
+set nobackup
+set noswapfile
+filetype plugin indent on
+
+set list
+set listchars=tab:>.,trail:.,extends:#,nbsp:.
+autocmd filetype html,xml set listchars-=tab:>.
+
 if (empty($TMUX))
   if (has("nvim"))
   "For Neovim 0.1.3 and 0.1.4 < https://github.com/neovim/neovim/pull/2198 >
