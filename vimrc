@@ -88,6 +88,11 @@ let g:ale_sign_warning = '⚠'
 let g:airline#extensions#ale#enabled = 1
 au VimEnter * NERDTreeToggle
 nmap <F3> :NERDTreeToggle<CR>
+let NERDTreeMinimalUI = 1
+let NERDTreeDirArrows = 1
+let NERDTreeAutoDeleteBuffer = 1
+
+
 nmap <F8> :TagbarToggle<CR>
 highlight Comment cterm=italic
 highlight Comment gui=italic
