@@ -27,7 +27,7 @@ set noswapfile
 filetype plugin indent on
 
 set list
-set listchars=tab:>.,trail:.,extends:#,nbsp:.
+set listchars=tab:\,.,trail:.,extends:#,nbsp:.
 autocmd filetype html,xml set listchars-=tab:>.
 
 if (empty($TMUX))
