@@ -29,6 +29,8 @@ filetype plugin indent on
 set list
 set listchars=tab:\,.,trail:.,extends:#,nbsp:.
 autocmd filetype html,xml set listchars-=tab:>.
+:autocmd BufWritePre *.go :GoBuild
+
 
 if (empty($TMUX))
   if (has("nvim"))
