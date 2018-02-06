@@ -87,7 +87,7 @@ let g:ale_sign_column_always = 1
 let g:airline_theme='materialmonokai'
 let g:materialmonokai_italic=1
 colorscheme dracula " material-monokai vimspectr240curve-dark  nemo-dark  materialbox  onedark
-
+hi Type guifg=#d5c8ea gui=italic,bold
 hi Pmenu ctermfg=NONE ctermbg=236 cterm=NONE guifg=NONE guibg=#64666d gui=NONE
 hi PmenuSel ctermfg=NONE ctermbg=24 cterm=NONE guifg=NONE guibg=#204a87 gui=NONE
 
