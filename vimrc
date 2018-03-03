@@ -278,3 +278,11 @@ if !exists('g:airline_symbols')
 endif
 
 
+autocmd QuickFixCmdPost [^l]* nested cwindow
+autocmd QuickFixCmdPost    l* nested lwindow
+let g:typescript_compiler_binary = 'tsc'
+let g:typescript_compiler_options = ''
+:autocmd BufWritePre *.ts :Autoformat
+:set tabstop=4
+:set shiftwidth=4
+:set expandtab
