@@ -1,3 +1,4 @@
+
 set nocompatible
 set nowrap        " don't wrap lines
 set tabstop=4     " a tab is four spaces
@@ -27,11 +28,9 @@ set noswapfile
 filetype plugin indent on
 
 set list
-set listchars=tab:\,.,trail:.,extends:#,nbsp:.
-autocmd filetype html,xml set listchars-=tab:>.
+set listchars=tab:\ .,trail:.,extends:#,nbsp:.
+" autocmd filetype html,xml set listchars=tab:.,trail:.,extends:#,nbsp:.
 :autocmd BufWritePre *.go :GoBuild
-
-
 if (empty($TMUX))
   if (has("nvim"))
   "For Neovim 0.1.3 and 0.1.4 < https://github.com/neovim/neovim/pull/2198 >
@@ -50,26 +49,31 @@ filetype plugin on
 execute pathogen#infect()
 
 let g:ale_fix_on_save = 1
-let g:ale_fixers = {
-\   'javascript': ['prettier', 'jshint'],
-\	  'chef':	['foodcritic'],
-\ 	'go':	['gofmt', 'goimports'],
-\	  'python': ['autopep8'],
-\	  'ansible': ['ansible-lint'],
-\	  'ruby': ['rubocop']
-\}
+
 let g:neodark#solid_vertsplit = 1 " default: 0
-let g:neodark#background = '#202020'
-
-filetype indent on
-set smartindent
-set cursorline
+" let g:neodark#background = '#202020'
+let g:neodark#italics=1
 set cursorcolumn
-
-syntax on
+set cursorline
+set smartindent
+filetype indent on
+" let g:ale_linters = {                                 "       \'go': ['gometalinter', 'golint', 'gosimple']
+"                                               \}
+let g:ale_fixers = {
+\   'javascript': ['prettier', 'standard'],
+\       'go':   ['gofmt', 'goimports'],
+\       'python': ['autopep8'],
+\       'ruby': ['rubocop']
+\}
+" "   \ 'ansible': ['ansible-lint'],
+"
+" let g:ale_linters = {
+                                                                                                " \'javascript': ['eslint', 'flow', 'jscs']
+                                                " \}
+"
 set mouse=a
-set tabstop=4
 set number
+syntax on
 set linespace=5
 filetype plugin indent on
 let g:airline#extensions#tabline#enabled = 1
@@ -77,28 +81,53 @@ let g:airline#extensions#tabline#enabled = 1
 let g:deepspace_italics=1
 let g:lucario_italic=1
 let g:lucario_bold=1
-set background=dark
 autocmd FileType ruby,eruby set filetype=ruby.eruby.chef
 "set t_Co=256
-set termguicolors
-set guifont=Operator\ Mono\ Book:h12
+" set guifont=Operator\ Mono\ Book:h12
 let g:ale_sign_column_always = 1
+set guifont=Pragmata\ Pro:h12
 
-let g:airline_theme='materialmonokai'
 let g:materialmonokai_italic=1
-colorscheme dracula " material-monokai vimspectr240curve-dark  nemo-dark  materialbox  onedark
-hi Type guifg=#d5c8ea gui=italic,bold
-hi Pmenu ctermfg=NONE ctermbg=236 cterm=NONE guifg=NONE guibg=#64666d gui=NONE
-hi PmenuSel ctermfg=NONE ctermbg=24 cterm=NONE guifg=NONE guibg=#204a87 gui=NONE
+
+set background=dark
+" colorscheme mythos " material-monokai vimspectr240curve-dark  nemo-dark  materialbox  onedark
+" colorscheme iceberg " neodark material-monokai dracula PaperColor  hybrid_material palenight  PaperColor  onedark SerialExperimentsLain  adventurous
+" highlight Pmenu ctermbg='#50546D'
+"
+let NERDTreeMinimalUI = 1
+" syntax on
+let g:oceanic_next_terminal_bold = 1
+let g:oceanic_next_terminal_italic = 1
+set background=dark " or light if you prefer the light version
+let g:two_firewatch_italics=1
+colorscheme neodark " spring-night
+let g:airline_theme='neodark'
+let g:neodark#italics = 1
+" let g:airline_theme='twofirewatch' " if you have Airline installed and want the associated g:airline_theme
+" hi Type guifg=#42f4d7 gui=italic,bohi Type guifg=#42f4d7 gui=italic,bold"
+
+hi Type guifg=#d3a70e gui=italic,bold
+"hi PmenuSel ctermfg=NONE ctermbg=24 cterm=NONE guifg=NONE guibg=#204a87 gui=NONE
+"hi CursorColumn ctermfg=NONE ctermbg=24 cterm=NONE guifg=NONE guibg=#333144 gui=NONE
+"hi CursorLine ctermfg=NONE ctermbg=24 cterm=NONE guifg=NONE guibg=#333144 gui=NONE
+"
+" hi Type guifg=#B0C4DE gui=italic,bold
+" hi Pmenu ctermfg=NONE ctermbg=236 cterm=NONE guifg=NONE guibg=#64666d gui=NONE
+" hi PmenuSel ctermfg=NONE ctermbg=24 cterm=NONE guifg=NONE guibg=#204a87 gui=NONE
+" hi CursorColumn ctermfg=NONE ctermbg=24 cterm=NONE guifg=NONE guibg=#333144 gui=NONE
+" hi CursorLine ctermfg=NONE ctermbg=24 cterm=NONE guifg=NONE guibg=#333144 gui=NONE
+"
+"45415b
+" colorscheme ceudah
 
 " colorscheme vimspectr240curve-dark
 let g:one_allow_italics=1
-" set background=dark " puffy puffy puffy for the dark version
 " set background=light " for the light _VERSION
 set clipboard=unnamed
 "let g:go_fmt_command = "goimports"
 au FileType go nmap <Ctrl-F5> :GoCoverageToggle -short<cr>
-au FileType go nmap <leader>gt :GoDeclsDir<cr>
+
+" au FileType go nmap <leader>gt :GoDeclsDir<cr>
 let g:go_auto_type_info = 1
 let g:go_highlight_build_constraints = 1
 let g:go_highlight_extra_types = 1
@@ -109,10 +138,10 @@ let g:go_highlight_operators = 1
 let g:go_highlight_structs = 1
 let g:go_highlight_types = 1
 let g:go_auto_sameids = 1
-au FileType go set noexpandtab
-au FileType go set shiftwidth=4
-au FileType go set softtabstop=4
-au FileType go set tabstop=4
+au FileType go,ts,js set noexpandtab
+au FileType go,ts,js set shiftwidth=4
+au FileType go,ts,js set softtabstop=4
+au FileType go,ts,js set tabstop=4
 " Error and warning signs.
 let g:ale_sign_error = '⤫'
 let g:ale_sign_warning = '⚠'
@@ -120,11 +149,6 @@ let g:ale_sign_warning = '⚠'
 let g:airline#extensions#ale#enabled = 1
 au VimEnter * NERDTreeToggle
 nmap <F3> :NERDTreeToggle<CR>
-let NERDTreeMinimalUI = 1
-let NERDTreeDirArrows = 1
-let NERDTreeAutoDeleteBuffer = 1
-
-
 nmap <F8> :TagbarToggle<CR>
 highlight Comment cterm=italic
 highlight Comment gui=italic
@@ -181,7 +205,7 @@ let g:airline_powerline_fonts = 1
 if !exists('g:airline_symbols')
     let g:airline_symbols = {}
 endif
-
+:map <leader>F ggvG=
 " unicode symbols
 let g:airline_left_sep = '»'
 let g:airline_left_sep = '▶'
@@ -196,6 +220,8 @@ let g:airline_symbols.paste = 'Þ'
 let g:airline_symbols.paste = '∥'
 let g:airline_symbols.whitespace = 'Ξ'
 
+  let g:airline_right_alt_sep = ''
+  let g:airline_left_alt_sep = ''
 " airline symbols
 if has('unix')
   let g:airline_left_sep = ''
