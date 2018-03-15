@@ -92,7 +92,7 @@ git clone https://github.com/SirVer/ultisnips.git ~/.vim/bundle/ultisnips
 git clone https://github.com/sheerun/vim-polyglot.git ~/.vim/bundle/vim-polyglot
 git clone https://github.com/moll/vim-node.git ~/.vim/bundle/vim-node
 git clone https://github.com/posva/vim-vue.git ~/.vim/bundle/vim-vuew
-
+git clone https://github.com/sebdah/vim-delve.git ~/.vim/bundle/vim-delve
 # This is broken for me as of 3/28/17
 #git clone https://github.com/Townk/vim-autoclose.git ~/.vim/bundle/vim-autoclose
 
